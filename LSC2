@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorando el Universo con Señas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Explorando el Universo con Señas</h1>
+        <p>¡Aprende sobre el espacio mientras usas señas divertidas!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#aprender">Aprender Señales</a></li>
+            <li><a href="#juegos">Juegos</a></li>
+            <li><a href="#explorar">Explorar el Espacio</a></li>
+        </ul>
+    </nav>
+
+    <section id="aprender" class="content-section">
+        <h2>Aprender Señales</h2>
+        <div class="video-container">
+            <video width="320" height="240" controls>
+                <source src="señas-astronauta.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <p>Seña de Astronauta</p>
+        </div>
+        <div class="video-container">
+            <video width="320" height="240" controls>
+                <source src="señas-planeta.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <p>Seña de Planeta</p>
+        </div>
+    </section>
+
+    <section id="juegos" class="content-section">
+        <h2>Juegos Interactivos</h2>
+        <button onclick="startGame()">¡Juega Ahora!</button>
+        <div id="gameArea"></div>
+    </section>
+
+    <section id="explorar" class="content-section">
+        <h2>Explorar el Espacio</h2>
+        <p>Haz clic en un planeta para ver su seña:</p>
+        <div class="planets">
+            <img src="earth.png" alt="Tierra" onclick="showSign('Tierra')">
+            <img src="mars.png" alt="Marte" onclick="showSign('Marte')">
+        </div>
+        <p id="signOutput"></p>
+    </section>
+
+    <footer>
+        <p>© 2024 Explorando el Universo con Señas. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #ffcc00;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+}
+
+.content-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.video-container {
+    margin: 10px;
+}
+
+.planets {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.planets img {
+    width: 100px;
+    cursor: pointer;
+}
+
+#gameArea {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+function showSign(planet) {
+    const signOutput = document.getElementById("signOutput");
+    signOutput.textContent = "Seña de " + planet;
+}
+
+function startGame() {
+    const gameArea = document.getElementById("gameArea");
+    gameArea.innerHTML = "<p>¡Juego en construcción! Pronto podrás jugar y aprender más sobre el espacio.</p>";
+}
